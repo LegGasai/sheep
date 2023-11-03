@@ -77,6 +77,7 @@ public class test {
     public void play(){
         URL url=this.getClass().getResource("/music/c.wav");
         AudioClip ac= Applet.newAudioClip(url);
+
         ac.play();
     }
 }

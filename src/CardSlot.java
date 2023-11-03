@@ -16,6 +16,7 @@ public class CardSlot extends JPanel {
     public GuiApplication application;
     public int offset=38;
     public boolean isAllowWithdraw=true;
+    //记录上一张卡牌，用于撤销操作
     public Card lastCard;
     public CardSlot(GuiApplication application) throws IOException {
         //加载卡槽图片
@@ -45,6 +46,7 @@ public class CardSlot extends JPanel {
         int id = card.type.ordinal();
         map[id]++;
         int index=-1;
+        //同种卡牌，位置归类
         for (int i = 0; i < cardList.size(); i++) {
             if (cardList.get(i).type.ordinal()==id){
                 index=i;
